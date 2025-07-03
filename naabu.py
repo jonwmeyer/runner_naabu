@@ -84,8 +84,7 @@ def run_naabu(host):
     """Run naabu on the given host and return its output as a string, or None on error."""
     command = [
         "/go/bin/naabu",
-        "-host", host,
-        "-silent"
+        "-host", host
     ]
     print(f"[*] Executing: {' '.join(command)}")
     try:
