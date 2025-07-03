@@ -17,14 +17,14 @@ build:
     ENV CGO_ENABLED=1
     mkdir -p /go/src
     mkdir -p /go/bin
-    go install -v github.com/projectdiscovery/naabu/cmd/naabu@latest    
+    cd /tmp && go install -v github.com/projectdiscovery/naabu/cmd/naabu@latest && cd -
     echo "END: Building naabu"
 
 webform:
   - name: host
-    prompt: Host
+    prompt: HOST
     type: text
 
 launch:
   type: binary
-  command: naabu -host ${host}
+  command: /go/bin/naabu -host ${host}
